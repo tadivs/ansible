@@ -1,5 +1,5 @@
 [mysql]
-172.31.81.50
+54.234.187.155
 
 [mysql:vars]
 ansible_user=
