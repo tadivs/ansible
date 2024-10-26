@@ -17,7 +17,7 @@
    - name: Register
       ansible.builtin.shell: uptime
       register: OUTPUT 
-    - name: Print OUTPUT of previous task
+   - name: Print OUTPUT of previous task
       ansible.builtin.debug:
         msg: "{{ OUTPUT.stdout }}"   
                 
