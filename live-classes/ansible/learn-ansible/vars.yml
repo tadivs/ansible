@@ -1,0 +1,23 @@
+- name: Print sample text
+  hosts: localhost
+  vars:
+   URL_PLAY: I love my country
+  tasks:
+   - name: Print statement
+     ansible.builtin.debug:
+       msg: Print - {{ URL_PLAY }}
+   - name: Print statement
+     ansible.builtin.debug:
+       msg: Print - {{ URL_TASK }}
+   - name: Task Varibale Print statement
+     ansible.builtin.debug:
+       msg: Print - {{ URL_TASK }}
+     vars:
+       URL_TASK: I like my country        
+
+
+
+# A varibale is an object that stores data
+
+# 1. Global variable
+# 2. Local or Task variable
