@@ -1,25 +1,23 @@
-- name: Print sample text
+- name: Demo on vars
   hosts: localhost
   vars:
-   URL_PLAY: I love my country
+    URL_PLAY: play.example.com
   tasks:
-   - name: Print statement
-     ansible.builtin.debug:
-       msg: Print - {{ URL_PLAY }}
-   - name: Print statement
-     ansible.builtin.debug:
-       msg: Print - {{ URL_PLAY }}
-   - name: Task Varibale Print statement
-     ansible.builtin.debug:
-       msg: Print - {{ URL_TASK }}
-     vars:
-       URL_TASK: I like my country 
-   - name: Register
+    - name: Print variable
+      ansible.builtin.debug:
+        msg: URL_PLAY - {{ URL_PLAY }}
+    - name: Task variable
+      ansible.builtin.debug:
+        msg: URL_TASK - {{ URL_TASK }}
+      vars:
+        URL_TASK: tasks.example.com  
+    # Store result of a task, to OUTPUT variable
+    - name: demo
       ansible.builtin.shell: uptime
       register: OUTPUT 
-   - name: Print OUTPUT of previous task
+    - name: Print OUTPUT of previous task
       ansible.builtin.debug:
-        msg: "{{ OUTPUT.stdout }}"   
+        msg: "{{ OUTPUT.stdout }}"     
                 
 
 
