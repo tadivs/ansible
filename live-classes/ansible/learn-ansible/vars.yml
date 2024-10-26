@@ -8,7 +8,7 @@
        msg: Print - {{ URL_PLAY }}
    - name: Print statement
      ansible.builtin.debug:
-       msg: Print - {{ URL_TASK }}
+       msg: Print - {{ URL_PLAY }}
    - name: Task Varibale Print statement
      ansible.builtin.debug:
        msg: Print - {{ URL_TASK }}
