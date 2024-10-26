@@ -13,7 +13,14 @@
      ansible.builtin.debug:
        msg: Print - {{ URL_TASK }}
      vars:
-       URL_TASK: I like my country        
+       URL_TASK: I like my country 
+   - name: Register
+      ansible.builtin.shell: uptime
+      register: OUTPUT 
+    - name: Print OUTPUT of previous task
+      ansible.builtin.debug:
+        msg: "{{ OUTPUT.stdout }}"   
+                
 
 
 
